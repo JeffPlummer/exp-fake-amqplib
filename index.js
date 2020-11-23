@@ -38,7 +38,7 @@ function connect(url, options, connCallback) {
       function assertQueue(queue, qOptions, qCallback) {
         qCallback = qCallback || function () {};
         setIfUndef(queues, queue, {messages: [], subscribers: [], options: qOptions});
-        qCallback();
+        qCallback({queue: "FakeQueue"});
       }
 
       function assertExchange(exchange, type, exchOptions, exchCallback) {
